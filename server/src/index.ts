@@ -3,11 +3,11 @@ import * as express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { createSchema } from "./createSchema";
 import { createTypeormConn } from "./createTypeormConn";
-import { setupData } from "./setupData";
+// import { setupData } from "./setupData";
 
 const startServer = async () => {
   await createTypeormConn();
-  await setupData();
+  // await setupData();
 
   const app = express();
 

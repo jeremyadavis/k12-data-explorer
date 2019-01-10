@@ -1,32 +1,45 @@
-import { Entity, Column, BaseEntity, PrimaryColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  PrimaryColumn,
+  OneToMany
+  // JoinColumn
+} from "typeorm";
+import { SchoolForm1 } from "./SchoolForm1";
 
 @Entity("lea")
 export class LEA extends BaseEntity {
-  @PrimaryColumn()
-  leaid: string;
+  @PrimaryColumn({
+    name: "leaid",
+  })
+  id: string;
 
   @Column({
     name: "lea_name",
   })
-  leaName: string;
+  name: string;
 
   @Column({
     name: "lea_address",
   })
-  leaAddress: string;
+  address: string;
 
   @Column({
     name: "lea_city",
   })
-  leaCity: string;
+  city: string;
 
   @Column({
     name: "lea_zip",
   })
-  leaZip: string;
+  zip: string;
 
   @Column({
     name: "lea_state",
   })
-  leaState: string;
+  state: string;
+
+  @OneToMany(() => SchoolForm1, schoolForm1 => schoolForm1.lea)
+  schools: SchoolForm1[];
 }
