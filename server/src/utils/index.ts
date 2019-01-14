@@ -1,6 +1,6 @@
-export const booleanify = (val: String): Boolean => {
+export const booleanify = (val: string): boolean | null => {
   if (val !== "N" && val !== "Y") {
-    throw new Error("booleanify only recognized values of N or Y");
+    return null;
   }
   return val === "N" ? false : true;
 };

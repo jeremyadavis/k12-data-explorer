@@ -1,22 +1,25 @@
 {
   "dependencies": {
-    "apollo-server": "^2.2.6",
+    "apollo-server": "^2.3.1",
     "apollo-server-express": "^2.3.1",
     "cross-env": "^5.2.0",
     "dotenv-safe": "^6.1.0",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
-    "nodemon": "^1.18.8",
-    "pg": "^7.7.1",
+    "nodemon": "^1.18.9",
+    "pg": "^7.8.0",
     "reflect-metadata": "^0.1.12",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typeorm": "^0.2.9",
+    "tslint": "^5.12.1",
+    "typeorm": "^0.2.11",
     "typescript": "^3.2.2",
     "uuid": "^3.3.2"
   },
   "scripts": {
     "start-cloud": "cross-env NODE_ENV=cloud nodemon --exec ts-node src/index.ts",
-    "start": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts"
+    "start": "cross-env NODE_ENV=development ts-node-dev --respawn src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.32"
   }
 }

@@ -40,6 +40,11 @@ export class LEA extends BaseEntity {
   })
   state: string;
 
+  @Column({
+    name: "lea_enr",
+  })
+  totalEnrollment: number;
+
   @OneToMany(() => SchoolForm1, schoolForm1 => schoolForm1.lea)
   schools: SchoolForm1[];
 }
